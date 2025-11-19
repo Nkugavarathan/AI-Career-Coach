@@ -25,21 +25,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
-
+// import checkUser from "../lib/checkUser"
+import { checkUser } from "./../lib/checkUser"
 export default async function Header() {
+  await checkUser()
   return (
-    <header className="fixed top-0 w-full border-b flex  items-center justify-between bg-background backdrop-blur-md z-50 supports-backdrop-filter:bg-background/80 h-16 mx-auto px-4  ">
+    <header className="fixed top-0 w-full border-b flex  items-center justify-between bg-background backdrop-blur-md z-50 supports-backdrop-filter:bg-background/80 h-16  px-4  ">
       <Link href={"/"}>PathFinder AI</Link>
       {/* later add Image  Logo*/}
-      <div>
+      <div className="flex gap-2">
         {/* actions */}
         <SignedIn>
           {/* if person signedIn  */}
           <Link href={"/dashboard"}>
-            <Button
-              variant="outline"
-              className="hidden md:inline-flex items-center gap-2"
-            >
+            <Button variant="outline" className="hidden md:inline-flex  gap-2">
               <LayoutDashboard className="h-4 w-4" />
               Industry Insights
             </Button>

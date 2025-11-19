@@ -8,8 +8,7 @@ import Link from "next/link"
 const HeroSection = () => {
   return (
     <section
-      className="
-        relative w-full h-screen flex items-center justify-center 
+      className="relative w-full h-screen flex items-center justify-center 
         bg-gray-50 text-gray-900
       "
     >
